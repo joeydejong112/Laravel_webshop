@@ -2,30 +2,30 @@
 @section('content')
 <div class="content-top ">
     <div class="container ">
-        <div class="spec ">
-            <h3>Special Offers</h3>
-            <div class="ser-t">
-                <b></b>
-                <span><i></i></span>
-                <b class="line"></b>
-            </div>
-        </div>
+       
         @foreach ($Producten as $Producten)
         {{-- product --}}
-        <div class="col-md-3 pro-1">
-            <div class="col-m">
-                <a href="/product/{{$Producten->id}}" data-toggle="modal" data-target="#myModal1" class="offer-img">
+        <div class="col-md-6 pro-1 ml-auto">
+            <div class="col-m" style="border: 0px!important">
+                <div class="offer-img">
                     <img src="{{$Producten->foto}}" class="img-responsive" alt="image_product">
                     <div class="offer">
                         <p><span>Offer</span></p>
                     </div>
-                </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-6 pro-1 ml-auto">
+            <div class="col-m" style="border: 0px!important">
+            
                 <div class="mid-1">
                     <div class="women">
                         <h6><a href="#">{{$Producten->naam}}</a></h6>
                     </div>
                     <div class="mid-2">
                         <p><label>${{$Producten->prijs - 6}}.00</label><em class="item_price">${{$Producten->prijs}}.00</em></p>
+                        <p>{{$Producten->description}}</p>
                         <div class="block">
                             <div class="starbox small ghosting"> </div>
                         </div>
@@ -49,7 +49,8 @@
                     </div>
                 </div>
             </div>
-        </div>@endforeach
+        </div>
+        @endforeach
     </div>
 
 </div>        
